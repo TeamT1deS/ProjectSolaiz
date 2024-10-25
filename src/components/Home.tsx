@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Activity, ArrowRight, Plus } from "lucide-react";
+import { Activity, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import "@/assets/css/Home.css";
 
