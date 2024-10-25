@@ -1,0 +1,24 @@
+.sx-container {
+  display: flex;
+  margin: 3% 4%;
+}
+
+.banner-1 {
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.banner-2 {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+
+.banner-3 {
+  background-color: #D9AFD9;
+  background-image: linear-gradient(147deg, #D9AFD9 34%, #97D9E1 100%);
+}
+
+.banner-4 {
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 11%, #C850C0 49%, #FFCC70 100%);  
+}
