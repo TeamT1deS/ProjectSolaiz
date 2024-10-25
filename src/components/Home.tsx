@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Activity, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import "@/assets/css/Home.css";
+import "@/assets/css/home.css";
 
 const TypingEffect = () => {
   const [displayText, setDisplayText] = useState("SentinelX");
