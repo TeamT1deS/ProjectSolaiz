@@ -29,6 +29,8 @@ const TypingEffect = () => {
     "Rai",
     "Ra",
     "R",
+    "",
+    "R",
     "Ra",
     "Rai",
     "Raiz",
@@ -39,7 +41,7 @@ const TypingEffect = () => {
   const [index, setIndex] = useState(0);
   const [longWait, setLongWait] = useState(false);
   useEffect(() => {
-    if (titleArray[index] === "R" || titleArray[index] === "Raizist") {
+    if (titleArray[index] === "" || titleArray[index] === "Raizist") {
       setLongWait(true);
     } else {
       setLongWait(false);
