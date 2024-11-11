@@ -158,3 +158,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.noselect {
+  -webkit-user-select: none; /* 支持 Safari 和旧版 Chrome */
+  -moz-user-select: none;    /* 支持 Firefox */
+  -ms-user-select: none;     /* 支持 IE10+ */
+  user-select: none;         /* 标准属性 */
+}
+
+.dropdown-trigger:focus {
+  outline: none;
+}
