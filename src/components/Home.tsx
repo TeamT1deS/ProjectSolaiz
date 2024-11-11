@@ -21,23 +21,25 @@ import { Input } from "@/components/ui/input";
 import "@/assets/css/home.css";
 
 const TypingEffect = () => {
-  const [displayText, setDisplayText] = useState("SentinelX");
+  const [displayText, setDisplayText] = useState("Raizist");
   const titleArray = [
-    "Sentinel",
-    "Sentine",
-    "Sentin",
-    "Senti",
-    "SentiX",
-    "Senti",
-    "Sentin",
-    "Sentine",
-    "Sentinel",
-    "SentinelX",
+    "Raizis",
+    "Raizi",
+    "Raiz",
+    "Rai",
+    "Ra",
+    "R",
+    "Ra",
+    "Rai",
+    "Raiz",
+    "Raizi",
+    "Raizis",
+    "Raizist",
   ];
   const [index, setIndex] = useState(0);
   const [longWait, setLongWait] = useState(false);
   useEffect(() => {
-    if (titleArray[index] === "SentinelX" || titleArray[index] === "SentiX") {
+    if (titleArray[index] === "R" || titleArray[index] === "Raizist") {
       setLongWait(true);
     } else {
       setLongWait(false);
@@ -108,7 +110,7 @@ const LoginDialog: React.FC = () => {
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
-            Next Gen Cybersecurity Platform - SentiX
+            Next Gen Cybersecurity Platform - Raizist
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">

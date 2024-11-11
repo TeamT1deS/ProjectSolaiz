@@ -40,7 +40,7 @@ export function NavMenu() {
 
   return (
     <div className="noselect fixed top-0 left-0 w-full h-[60px] backdrop-blur-md bg-white/30 flex items-center z-10">
-      <div className="poppins-regular flex-shrink-0 pl-7 pr-7">SentiX</div>
+      <div className="poppins-regular flex-shrink-0 pl-7 pr-7">Raizist</div>
       <Separator className="h-1/2 bg-black/30" orientation="vertical" />
       <div className="flex-1 pl-4 flex items-center justify-start">
         <NavigationMenu className="w-full flex items-center">
