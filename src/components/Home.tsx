@@ -213,11 +213,11 @@ function Home() {
         <div className="noselect flex-1 max-w-lg bg-black bg-opacity-80 text-green-400 p-6 rounded-lg shadow-lg ml-6">
           <div className="font-mono text-sm">
             <div className="mb-2">
-              <span className="text-gray-500">$</span> ping sentix.com
+              <span className="text-gray-500">$</span> ping raizist.com
             </div>
             <div className="animate-pulse">
               <span className="text-gray-500">64 bytes from </span>
-              <span>sentix.com</span>
+              <span>raizist.com</span>
               <span className="text-gray-500">
                 : icmp_seq=1 ttl=56 time=24.4 ms
               </span>
@@ -227,7 +227,7 @@ function Home() {
             </div>
             <div className="my-4">
               <span className="text-gray-500">
-                flag&#123;P1atform_SentiX_by_Team_T1deS&#125;
+                flag&#123;P1atform_raizist_by_Team_T1deS&#125;
               </span>
             </div>
             <div className="my-4">&nbsp;</div>
