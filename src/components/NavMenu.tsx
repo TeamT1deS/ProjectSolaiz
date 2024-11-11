@@ -29,7 +29,7 @@ export function NavMenu() {
   const handleLogout = () => {
     dispatch(logout());
     axios.post("/api/logout", {}, { withCredentials: true })
-    .then(response => {
+    .then(_response => {
       console.log("Logged out successfully");
       // 做其他的清理操作，例如跳转到登录页等
     })
