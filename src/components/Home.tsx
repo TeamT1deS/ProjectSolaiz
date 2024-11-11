@@ -53,7 +53,7 @@ const TypingEffect = () => {
           setIndex(0);
         }
       },
-      longWait ? 6000 : 200
+      longWait ? 5000 : 200
     );
 
     return () => clearTimeout(timeout);
