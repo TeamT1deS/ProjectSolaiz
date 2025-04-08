@@ -1,6 +1,6 @@
 # Project Solaiz  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8d47fea2-8a6b-42af-a9eb-379c0def9b4c/deploy-status)](https://app.netlify.com/sites/solaiz/deploys)
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
