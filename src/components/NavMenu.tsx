@@ -28,19 +28,19 @@ export function NavMenu() {
   const userName = useSelector((state: RootState) => state.auth.userName);
   const handleLogout = () => {
     dispatch(logout());
-    axios.post("/api/logout", {}, { withCredentials: true })
-    .then(_response => {
-      console.log("Logged out successfully");
-      // 做其他的清理操作，例如跳转到登录页等
-    })
-    .catch(error => {
-      console.error("Logout error", error);
-    });
+    axios
+      .post("/api/logout", {}, { withCredentials: true })
+      .then((_response) => {
+        console.log("Logged out successfully");
+      })
+      .catch((error) => {
+        console.error("Logout error", error);
+      });
   };
 
   return (
     <div className="noselect fixed top-0 left-0 w-full h-[60px] backdrop-blur-md bg-white/30 flex items-center z-10">
-      <div className="poppins-regular flex-shrink-0 pl-7 pr-7">Raizist</div>
+      <div className="poppins-regular flex-shrink-0 pl-7 pr-7">Solaiz</div>
       <Separator className="h-1/2 bg-black/30" orientation="vertical" />
       <div className="flex-1 pl-4 flex items-center justify-start">
         <NavigationMenu className="w-full flex items-center">
@@ -48,8 +48,8 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-white/0"
-                  variant="link"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  variant="ghost"
                   size="sm"
                 >
                   Home
@@ -59,8 +59,8 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-white/0 text-black cursor-not-allowed"
-                  variant="link"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black cursor-not-allowed"
+                  variant="ghost"
                   size="sm"
                   disabled
                 >
@@ -71,8 +71,8 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-white/0"
-                  variant="link"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  variant="ghost"
                   size="sm"
                 >
                   Competition
@@ -82,8 +82,8 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-white/0"
-                  variant="link"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  variant="ghost"
                   size="sm"
                 >
                   Practise
@@ -93,8 +93,8 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-white/0"
-                  variant="link"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  variant="ghost"
                   size="sm"
                 >
                   Scoreboard
@@ -105,8 +105,8 @@ export function NavMenu() {
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <Button
-                    className="poppins-regular pl-4 pr-4 bg-white/0"
-                    variant="link"
+                    className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                    variant="ghost"
                     size="sm"
                   >
                     Manage
@@ -121,7 +121,9 @@ export function NavMenu() {
         <div className="absolute right-0">
           <DropdownMenu>
             <DropdownMenuTrigger className="dropdown-trigger flex items-center poppins-regular text-sm pl-7 pr-7 min-h-[60px] bg-white/0">
-              {isAdmin && (<UserRoundCheck className="mr-1" strokeWidth={1.2} size={18} />)}
+              {isAdmin && (
+                <UserRoundCheck className="mr-1" strokeWidth={1.2} size={18} />
+              )}
               {userName}
               <ChevronDown className="ml-1" strokeWidth={1} size={18} />
             </DropdownMenuTrigger>
@@ -129,12 +131,8 @@ export function NavMenu() {
               className="backdrop-blur-md bg-white/60 min-w-0"
               align="center"
             >
-              <DropdownMenuItem className="justify-end">
-                个人信息
-              </DropdownMenuItem>
-              <DropdownMenuItem className="justify-end">
-                修改密码
-              </DropdownMenuItem>
+              <DropdownMenuItem className="justify-end">个人信息</DropdownMenuItem>
+              <DropdownMenuItem className="justify-end">修改密码</DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="justify-end" onClick={handleLogout}>
                 退出登录

@@ -21,50 +21,41 @@ import { Input } from "@/components/ui/input";
 import "@/assets/css/home.css";
 
 const TypingEffect = () => {
-  const [displayText, setDisplayText] = useState("Raizist");
-  const titleArray = [
-    "Raizis",
-    "Raizi",
-    "Raiz",
-    "Rai",
-    "Ra",
-    "R",
-    "",
-    "R",
-    "Ra",
-    "Rai",
-    "Raiz",
-    "Raizi",
-    "Raizis",
-    "Raizist",
-  ];
-  const [index, setIndex] = useState(0);
-  const [longWait, setLongWait] = useState(false);
-  useEffect(() => {
-    if (titleArray[index] === "" || titleArray[index] === "Raizist") {
-      setLongWait(true);
-    } else {
-      setLongWait(false);
-    }
-    const timeout = setTimeout(
-      () => {
-        if (index < titleArray.length) {
-          setDisplayText(titleArray[index]);
-          setIndex(index + 1);
-        } else {
-          setIndex(0);
-        }
-      },
-      longWait ? 5000 : 200
-    );
+  const fullText = "Solaiz";
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
 
-    return () => clearTimeout(timeout);
-  }, [index, displayText]);
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 100 : 200; // 删除比输入稍快
+    const pauseDuration = 2000; // 完成时的停顿
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < fullText.length) {
+        // 输入阶段
+        setDisplayText(fullText.slice(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      } else if (isDeleting && charIndex > 0) {
+        // 删除阶段
+        setDisplayText(fullText.slice(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else if (charIndex === fullText.length) {
+        // 输入完成，暂停后开始删除
+        setTimeout(() => setIsDeleting(true), pauseDuration);
+      } else if (charIndex === 0) {
+        // 删除完成，开始新一轮输入
+        setIsDeleting(false);
+        setCharIndex(0);
+      }
+    }, charIndex === fullText.length || charIndex === 0 ? pauseDuration : typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting]);
 
   return (
     <>
       <span className="roboto-regular">{displayText}</span>
-      <span className="roboto-regular">_</span>
+      <span className="roboto-regular animate-blink">_</span>
     </>
   );
 };
@@ -112,7 +103,7 @@ const LoginDialog: React.FC = () => {
         <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
-            Next Gen Cybersecurity Platform - Raizist
+            Next Gen Cybersecurity Platform - Solaiz
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
@@ -152,45 +143,44 @@ const LoginDialog: React.FC = () => {
   );
 };
 
-const LoginAlert: React.FC = () => {
+const LoginAlert = () => {
   const dispatch = useDispatch();
   const showAlert = useSelector((state: RootState) => state.auth.showAlert);
 
-  // 使用 useEffect 实现淡出效果
   useEffect(() => {
     if (showAlert) {
       const timer = setTimeout(() => {
-        dispatch(hideAlert()); // 一段时间后自动隐藏 Alert
-      }, 2000); // Alert 显示 2 秒
-
-      return () => clearTimeout(timer); // 组件卸载时清除定时器
+        dispatch(hideAlert());
+      }, 3000); // 显示3秒后自动隐藏
+      return () => clearTimeout(timer);
     }
   }, [showAlert, dispatch]);
 
   return (
     <AnimatePresence>
       {showAlert && (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mt-[65px] mx-[25%] z-50"
-      >
-        <Alert>
-          <AlertCircle className="h-4 w-4" />
-          <AlertTitle>Login Successful</AlertTitle>
-          <AlertDescription>
-            You have successfully logged in as an admin.
-          </AlertDescription>
-        </Alert>
-      </motion.div>
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md"
+        >
+          <Alert className="bg-gradient-to-r from-green-500 to-teal-500 text-white border-none shadow-lg rounded-lg">
+            <AlertCircle className="h-5 w-5" />
+            <AlertTitle className="text-lg font-semibold">Login Successful</AlertTitle>
+            <AlertDescription>
+              You have successfully logged in as an admin. Welcome aboard!
+            </AlertDescription>
+          </Alert>
+        </motion.div>
       )}
     </AnimatePresence>
   );
 };
 
 function Home() {
+  
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   return (
@@ -215,21 +205,25 @@ function Home() {
         <div className="noselect flex-1 max-w-lg bg-black bg-opacity-80 text-green-400 p-6 rounded-lg shadow-lg ml-6">
           <div className="font-mono text-sm">
             <div className="mb-2">
-              <span className="text-gray-500">$</span> ping raizist.com
+              <span className="text-gray-500">$</span> ping projectsolaiz.com
             </div>
             <div className="animate-pulse">
               <span className="text-gray-500">64 bytes from </span>
-              <span>raizist.com</span>
+              <span>projectsolaiz.com</span>
               <span className="text-gray-500">
-                : icmp_seq=1 ttl=56 time=24.4 ms
+                : <br/>icmp_seq=1 ttl=56 time=21.6 ms
+              </span>
+              <span className="text-gray-500">
+                <br/>icmp_seq=2 ttl=56 time=25.4 ms
               </span>
             </div>
+            <br/>
             <div>
               <span className="text-gray-500">$</span> cat /flag
             </div>
             <div className="my-4">
               <span className="text-gray-500">
-                flag&#123;P1atform_raizist_by_Team_T1deS&#125;
+                flag&#123;P1atform_SolaiZ_by_Team_T1deS&#125;
               </span>
             </div>
             <div className="my-4">&nbsp;</div>
@@ -241,7 +235,7 @@ function Home() {
       <LoginAlert></LoginAlert>
       <div className="noselect w-full h-[15%] fixed bottom-0 left-0 flex items-center justify-center">
         <p className="flex items-center roboto-regular text-white/50 text-center text-md">
-          &copy; Team T1deS 2024 All rights reserved
+          &copy; Team T1deS 2024-{new Date().getFullYear()} All rights reserved
           <Activity strokeWidth={1.5} size={22} />
           <Button
             variant="link"
