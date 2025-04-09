@@ -48,7 +48,7 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-[#0088ee] hover:bg-white/75 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-[calc(100%-2rem)] after:h-[2px] after:bg-[#0088ee] after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform after:-translate-x-1/2"
                   variant="ghost"
                   size="sm"
                 >
@@ -71,7 +71,7 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-[#0088ee] hover:bg-white/75 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-[calc(100%-2rem)] after:h-[2px] after:bg-[#0088ee] after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform after:duration-300 after:-translate-x-1/2"
                   variant="ghost"
                   size="sm"
                 >
@@ -82,7 +82,7 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-[#0088ee] hover:bg-white/75 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-[calc(100%-2rem)] after:h-[2px] after:bg-[#0088ee] after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform after:-translate-x-1/2"
                   variant="ghost"
                   size="sm"
                 >
@@ -93,7 +93,7 @@ export function NavMenu() {
             <NavigationMenuItem>
               <Link href="/" legacyBehavior passHref>
                 <Button
-                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-[#0088ee] hover:bg-white/75 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-[calc(100%-2rem)] after:h-[2px] after:bg-[#0088ee] after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform after:-translate-x-1/2"
                   variant="ghost"
                   size="sm"
                 >
@@ -105,7 +105,7 @@ export function NavMenu() {
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
                   <Button
-                    className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-blue-500 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-blue-500 after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                    className="poppins-regular pl-4 pr-4 bg-transparent text-black hover:text-[#0088ee] hover:bg-white/75 transition-all duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-[calc(100%-2rem)] after:h-[2px] after:bg-[#0088ee] after:scale-x-0 after:origin-center hover:after:scale-x-100 after:transition-transform after:-translate-x-1/2"
                     variant="ghost"
                     size="sm"
                   >
